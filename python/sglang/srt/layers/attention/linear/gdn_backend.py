@@ -13,8 +13,6 @@ from sglang.srt.layers.attention.linear.kernels.gdn_triton import TritonGDNKerne
 from sglang.srt.layers.attention.linear.utils import (
     LinearAttnKernelBackend,
     build_verify_intermediate_state_indices,
-    get_linear_attn_decode_backend,
-    get_linear_attn_prefill_backend,
 )
 from sglang.srt.layers.radix_linear_attention import RadixLinearAttention
 from sglang.srt.mem_cache.memory_pool import MambaPool
@@ -344,8 +342,9 @@ class GDNAttnBackend(MambaAttnBackendBase):
                 self.conv_states_shape[-1] < FLA_CHUNK_SIZE
             ), f"{self.conv_states_shape[-1]=} should be less than {FLA_CHUNK_SIZE}"
 
-        decode_backend = get_linear_attn_decode_backend()
-        prefill_backend = get_linear_attn_prefill_backend()
+        backends = model_runner.linear_attn_backends
+        decode_backend = backends.decode
+        prefill_backend = backends.prefill
         self.kernel_dispatcher = GDNKernelDispatcher(decode_backend, prefill_backend)
         # Sized past the pool for attn_tp-padded warmup/MLP-sync batches (see helper).
         self.verify_intermediate_state_indices = (
