@@ -184,7 +184,6 @@ _EXPOSED = {
     ("layers/dp_attention.py", "enable_dp_attention"),
     ("layers/moe/kt_ep_wrapper.py", "chunked_prefill_size"),
     ("layers/moe/utils.py", "speculative_moe_runner_backend"),
-    ("lora/lora_manager.py", "cuda_graph_config"),
     ("lora/lora_manager.py", "enable_dp_attention"),
     ("lora/lora_manager.py", "enable_lora_overlap_loading"),
     ("lora/marlin_lora_temp/policy.py", "enable_lora"),
@@ -293,8 +292,6 @@ _EXPOSED = {
         "speculative/dspark_components/dspark_config.py",
         "speculative_draft_model_revision",
     ),
-    ("speculative/dspark_components/dspark_planner.py", "max_running_requests"),
-    ("speculative/dspark_components/dspark_worker_v2.py", "cuda_graph_config"),
     ("speculative/dspark_components/dspark_worker_v2.py", "disable_cuda_graph"),
     ("speculative/dspark_components/dspark_worker_v2.py", "enable_dp_attention"),
     (
