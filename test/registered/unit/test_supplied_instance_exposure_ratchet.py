@@ -137,7 +137,6 @@ _EXPOSED = {
     ("constrained/base_grammar_backend.py", "grammar_backend"),
     ("constrained/base_grammar_backend.py", "reasoning_parser"),
     ("disaggregation/common/conn.py", "disaggregation_bootstrap_port"),
-    ("disaggregation/decode_kvcache_offload_manager.py", "page_size"),
     ("disaggregation/decode_kvcache_offload_manager.py", "served_model_name"),
     ("disaggregation/encode_receiver.py", "disaggregation_ib_device"),
     ("disaggregation/encode_receiver.py", "encoder_transfer_backend"),
@@ -217,7 +216,6 @@ _EXPOSED = {
     ("managers/scheduler.py", "enable_lora"),
     ("managers/scheduler.py", "enable_lora_overlap_loading"),
     ("managers/scheduler.py", "ep_size"),
-    ("managers/scheduler.py", "page_size"),
     ("managers/scheduler.py", "soft_watchdog_timeout"),
     ("managers/scheduler.py", "speculative_algorithm"),
     (
@@ -253,7 +251,6 @@ _EXPOSED = {
     ("mem_cache/hybrid_cache/hybrid_pool_assembler.py", "served_model_name"),
     ("mem_cache/kv_cache_builder.py", "disable_radix_cache"),
     ("mem_cache/kv_cache_builder.py", "enable_dp_attention"),
-    ("model_executor/model_runner.py", "page_size"),
     ("model_executor/model_runner.py", "speculative_algorithm"),
     ("model_executor/model_runner.py", "speculative_draft_attention_backend"),
     (
